@@ -170,7 +170,7 @@ execute_process(
 
 # ask R for the lib dir
 execute_process(
-  COMMAND ${LIBR_EXECUTABLE} "--slave" "--vanilla" "-e" "cat(normalizePath(R.home('lib'), winslash='/'))"
+  COMMAND ${LIBR_EXECUTABLE} "--slave" "--vanilla" "-e" "cat(normalizePath(R.home('lib'), winslash='/', mustWork = FALSE))"
   OUTPUT_VARIABLE LIBR_LIB_DIR
 )
 
